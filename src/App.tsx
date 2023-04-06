@@ -29,6 +29,7 @@ function App() {
 
   useEffect(() => {
     async function fetchRandomClassAndRace() {
+
       // Make API request to retrieve all available classes
       const classResponse = await axios.get('http://www.dnd5eapi.co/api/classes');
       const classes: Class[] = classResponse.data.results;
@@ -88,8 +89,34 @@ function App() {
         'Gregrath Monstermoon',
         'Lorth Hammerroar',
         'Naisrel Springdrifter',
+        'Tezed Autumncleanser',
+        'Nineret Fallscreamer',
+        'Rilthar Stonetree',
+        'Presmoira Eagermind',
+        'Eldan Birchwatcher',
+        'Redding Orbgazer',
+        'Hi Cei',
+        'Mol Sumog',
+        'Berdohr Loudpride',
+        'Nesma Drorenaln',
+        'Bellewin Goldeneye',
+        'Arzag The Coarse',
+        'Ban The Silent',
+        'Mel The Rotten',
+        'Hirrakar Goblinstep',
+        'Dorfran Goblinbane',
+        'Sinaren Keenhide',
+        'Akilos',
+        'Zofna',
+        'Keokis',
+        'Tylas',
+        'Balmor Thruthgehk',
+        'Hargrim Strongeye',
+        'Craren Willowgrove',
+        'Leofir Greenwish',
+        'Kelfir Woodflight',
       ];
-      
+
       const randomName = getRandomItem(names);
       if (randomName) {
         setRandomName(randomName);
@@ -101,6 +128,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+        <h3>D&D Character Generator</h3>
+      </div>
       {randomClass && randomRace && randomName ? (
         <div>
           <p>{randomName}</p>
@@ -108,7 +138,7 @@ function App() {
           <p>{randomRace.name}</p>
         </div>
       ) : (
-        <h1>Loading...</h1>
+        <h3>Loading...</h3>
       )}
     </div>
   );
