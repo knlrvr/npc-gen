@@ -13,9 +13,19 @@ interface Race {
   url: string;
 }
 
+function getRandomItem<T>(array: T[]): T | undefined {
+  if (array.length === 0) {
+    return undefined;
+  }
+
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
 function App() {
   const [randomClass, setRandomClass] = useState<Class | null>(null);
   const [randomRace, setRandomRace] = useState<Race | null>(null);
+  const [randomName, setRandomName] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchRandomClassAndRace() {
@@ -24,18 +34,66 @@ function App() {
       const classes: Class[] = classResponse.data.results;
 
       // Pick a random class from the list
-      const randomClassIndex = Math.floor(Math.random() * classes.length);
-      const randomClass = classes[randomClassIndex];
-      setRandomClass(randomClass);
+      const randomClass = getRandomItem(classes);
+      if (randomClass) {
+        setRandomClass(randomClass);
+      }
 
       // Make API request to retrieve all available races
       const raceResponse = await axios.get('http://www.dnd5eapi.co/api/races');
       const races: Race[] = raceResponse.data.results;
 
       // Pick a random race from the list
-      const randomRaceIndex = Math.floor(Math.random() * races.length);
-      const randomRace = races[randomRaceIndex];
-      setRandomRace(randomRace);
+      const randomRace = getRandomItem(races);
+      if (randomRace) {
+        setRandomRace(randomRace);
+      }
+
+      // Pick a random item from an array of names
+      const names = [
+        'Quodri Longbraid',
+        'Mankur Simben',
+        'Queci Quickgift',
+        'Bandysa Briskbranch',
+        'Torrim Cahakuhr',
+        'Belrus Boulderbranch',
+        'Elria Goldpride',
+        'Solmera Dardenn',
+        'Leofir Rainheart',
+        'Craven Summersense',
+        'Gilwynn Nightcrown',
+        'Valyra Lundrorirral',
+        'Rhokk The Reckless',
+        'Uhzak The Mad',
+        'Rensu The Colossal',
+        'Den The Fierce',
+        'Aetrius',
+        'Malecius',
+        'Velki',
+        'Zameia',
+        'Davkas Bronzerabbit',
+        'Ulfer Whisperstride',
+        'Odidrey Mossgather',
+        'Verna Fateye',
+        'Zinceran Herdon',
+        'Leoberos Ordalkaean',
+        'Urifina Shise',
+        'Gilphine Xirni',
+        'Troth Bonesprinter',
+        'Toa Chestfire',
+        'Kelavri Battlesword',
+        'Jey Tao',
+        'Mae Humblebraid',
+        'Wevay Nightwillow',
+        'Gregrath Monstermoon',
+        'Lorth Hammerroar',
+        'Naisrel Springdrifter',
+      ];
+      
+      const randomName = getRandomItem(names);
+      if (randomName) {
+        setRandomName(randomName);
+      }
     }
 
     fetchRandomClassAndRace();
@@ -43,10 +101,11 @@ function App() {
 
   return (
     <div className="App">
-      {randomClass && randomRace ? (
+      {randomClass && randomRace && randomName ? (
         <div>
-          <h1>{randomRace.name}</h1>
-          <h1>{randomClass.name}</h1>
+          <p>{randomName}</p>
+          <p>{randomClass.name}</p>
+          <p>{randomRace.name}</p>
         </div>
       ) : (
         <h1>Loading...</h1>
@@ -56,7 +115,5 @@ function App() {
 }
 
 export default App;
-
-
 
 
