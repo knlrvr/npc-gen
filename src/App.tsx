@@ -314,7 +314,7 @@ function App() {
                 </div>
               </div>
               ) : ( null )}
-              {randomRace.name === "Tieflinf" ? (
+              {randomRace.name === "Tiefling" ? (
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Racial Traits</p>
