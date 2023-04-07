@@ -27,6 +27,16 @@ interface Race {
   url: string;
 }
 
+interface RaceTrait {
+  name: string;
+  description: string;
+}
+
+interface RaceDetails {
+  name: string;
+  traits: RaceTrait[];
+}
+
 interface Alignment {
   name: string;
   url: string;
@@ -46,7 +56,7 @@ function App() {
   const [randomRace, setRandomRace] = useState<Race | null>(null);
   const [randomName, setRandomName] = useState<string | null>(null);
   const [randomAlignment, setRandomAlignment] = useState<Alignment | null>(null);
-  const [startingEquipment, setStartingEquipment] = useState<string[]>([]);
+  const [randomRaceTraits, setRandomRaceTraits] = useState<RaceTrait | null>(null);
 
   useEffect(() => {
     async function fetchRandomInfo() {
@@ -69,6 +79,8 @@ function App() {
       const randomRace = getRandomItem(races);
       if (randomRace) {
         setRandomRace(randomRace);
+      // Fetch the traits of the selected race
+      // will have to set up later to replace bodged code below
       }
 
       // random alignment 
@@ -164,7 +176,7 @@ function App() {
   }
 
   return (
-    <div className="App px-4">
+    <div className="App px-4 py-6">
       <div className="max-w-2xl mx-auto flex flex-col justify-center h-screen">
         <div className="text-4xl mb-2 flex items-end px-2">
           <SiDungeonsanddragons 
@@ -181,17 +193,140 @@ function App() {
                 <p className="text-sm uppercase text-gray-400">Name</p>
                 <span>{randomName}</span>
               </div>
-              {/* race */}
-              <div className="flex justify-between items-center">
-                <p className="text-sm uppercase text-gray-400">Race</p>
-                <span>{randomRace.name}</span>
-              </div>
+
               {/* class */}
               <div className="flex justify-between items-center">
                 <p className="text-sm uppercase text-gray-400">Class</p>
                 <span>{randomClass.name}</span>
               </div>
 
+              {/* race */}
+              <div className="flex justify-between items-center">
+                <p className="text-sm uppercase text-gray-400">Race</p>
+                <span>{randomRace.name}</span>
+              </div>    
+
+              {/* racial traits */} 
+              {/* replace with API data */}
+              {randomRace.name === "Dragonborn" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Draconic Ancestry</p>
+                  <p>Damage Resistance</p>
+                  <p>Breath Weapon</p>
+                  <p></p>
+                </div>
+              </div>
+              ) : ( null )}     
+              {randomRace.name === "Dwarf" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Darkvision</p>
+                  <p>Dwarven Resilience</p>
+                  <p>Dwarven Combat Training</p>
+                  <p>Tool Proficiency</p>
+                  <p>Stonecunning</p>
+                </div>
+              </div>
+              ) : ( null )}     
+              {randomRace.name === "Elf" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Darkvision</p>
+                  <p>Keen Senses</p>
+                  <p>Fey Ancestry</p>
+                  <p>Trance</p>
+                </div>
+              </div>
+              ) : ( null )}
+              {randomRace.name === "Gnome" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Darkvision</p>
+                  <p>Gnome Cunning</p>
+                </div>
+              </div>
+              ) : ( null )}
+              {randomRace.name === "Half-Elf" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Darkvision</p>
+                  <p>Fey Ancestry</p>
+                  <p>Skill Versatility</p>
+                </div>
+              </div>
+              ) : ( null )}
+              {randomRace.name === "Half-Orc" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Darkvision</p>
+                  <p>Menacing</p>
+                  <p>Relentless Endurance</p>
+                  <p>Savage Attacks</p>
+                </div>
+              </div>
+              ) : ( null )}
+              {randomRace.name === "Halfling" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Lucky</p>
+                  <p>Brave</p>
+                  <p>Halfling Nimbleness</p>
+                </div>
+              </div>
+              ) : ( null )}
+              {randomRace.name === "Human" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>none</p>
+                </div>
+              </div>
+              ) : ( null )}
+              {randomRace.name === "Tieflinf" ? (
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <p className="text-sm uppercase text-gray-400">Racial Traits</p>
+                  <span className="flex flex-col text-gray-300">From {randomRace.name}'s Traits</span>
+                </div>
+                <div className="flex flex-col items-end text-right">
+                  <p>Darkvision</p>
+                  <p>Hellish Resistance</p>
+                  <p>Infernal Legacy</p>
+                </div>
+              </div>
+              ) : ( null )}
             </div>
 
             {/* additional generated options */}
@@ -206,12 +341,12 @@ function App() {
 
               {/* trying to get the other info from the DND API is driving me crazy.
                   this will have to work for now. this is DISGUSTING, brother, but it works. */}
-              {/* starting equipment & proficiencies based on class */}
+              {/* starting equipment & proficiencies based on CLASS */}
               {randomClass.name === "Barbarian" ? (
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a greataxe <em>or</em> <strong>(b)</strong> any martial melee weapon</p>
@@ -219,8 +354,8 @@ function App() {
                   <p>An explorer's pack and four javelins</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400 text-right">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300 text-right">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light and medium armor</p>
@@ -233,7 +368,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a rapier, <strong>(b)</strong> a longsword, <em>or</em> <strong>(c)</strong> any simple weapon</p>
@@ -242,8 +377,8 @@ function App() {
                   <p>Leather armor and a dagger</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light armor</p>
@@ -259,7 +394,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a mace <em>or</em> <strong>(b)</strong> a warhammer (if proficient)</p>
@@ -269,8 +404,8 @@ function App() {
                   <p>A shield and a holy symbol</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light and medium armor</p>
@@ -283,7 +418,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a wooden shield <em>or</em> <strong>(b)</strong> any simple weapon</p>
@@ -291,8 +426,8 @@ function App() {
                   <p>Leather armor, an explorer&apos;s pack, and a druidic focus</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light and medium armor (nonmetal)</p>
@@ -314,7 +449,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> chain mail <em>or</em> <strong>(b)</strong> leather armor, longbow, and 20 arrows</p>
@@ -323,8 +458,8 @@ function App() {
                   <p><strong>(a)</strong> a dungeoneer&apos;s pack <em>or</em> <strong>(b)</strong> an explorer&apos;s pack</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>All armor</p>
@@ -338,7 +473,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a shortsword <em>or</em> <strong>(b)</strong> any simple weapon</p>
@@ -346,8 +481,8 @@ function App() {
                   <p>10 darts</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Simple weapons</p>
@@ -359,7 +494,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a martial weapon and a shield <em>or</em> <strong>(b)</strong> two martial weapons</p>
@@ -368,8 +503,8 @@ function App() {
                   <p>Chain mail and a holy symbol</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>All armor</p>
@@ -382,7 +517,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> scale mail <em>or</em> <strong>(b)</strong> leather armor</p>
@@ -391,8 +526,8 @@ function App() {
                   <p>A longbow and a quiver of 20 arrows</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light and medium armor</p>
@@ -405,7 +540,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a rapier <em>or</em> <strong>(b)</strong> a shortsword</p>
@@ -414,8 +549,8 @@ function App() {
                   <p>Leather armor, two daggers, and thieves&apos; tools</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light armor</p>
@@ -431,7 +566,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a light crossbow and 20 bolts <em>or</em> <strong>(b)</strong> any simple weapon</p>
@@ -440,8 +575,8 @@ function App() {
                   <p>Two daggers</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Daggers</p>
@@ -456,7 +591,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a light crossbow and 20 bolts <em>or</em> <strong>(b)</strong> any simple weapon</p>
@@ -465,8 +600,8 @@ function App() {
                   <p>Leather armor, any simple weapon, and two daggers</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light armor</p>
@@ -478,7 +613,7 @@ function App() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Equipment Selection</span>
                 </div>
                 <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a quarterstaff <em>or</em> <strong>(b)</strong> a dagger</p>
@@ -487,8 +622,8 @@ function App() {
                   <p>A spellbook</p>
                 </div>
                 <div className="flex justify-between items-center">
-                  <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <p className="text-sm uppercase text-gray-400">Class Proficiencies</p>
+                  <span className="flex flex-col text-gray-300">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Daggers</p>
