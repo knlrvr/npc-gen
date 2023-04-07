@@ -53,7 +53,7 @@ function App() {
 
       // random class 
       // Make API request to retrieve all available classes
-      const classResponse = await axios.get('http://www.dnd5eapi.co/api/classes');
+      const classResponse = await axios.get('https://www.dnd5eapi.co/api/classes');
       const classes: CustomClass[] = classResponse.data.results;
       // Pick a random class from the list
       const randomClass = getRandomItem(classes);
@@ -63,7 +63,7 @@ function App() {
 
       // random race
       // Make API request to retrieve all available races
-      const raceResponse = await axios.get('http://www.dnd5eapi.co/api/races');
+      const raceResponse = await axios.get('https://www.dnd5eapi.co/api/races');
       const races: Race[] = raceResponse.data.results;
       // Pick a random race from the list
       const randomRace = getRandomItem(races);
@@ -73,7 +73,7 @@ function App() {
 
       // random alignment 
       // Make API request to retrieve all available alignments
-      const alignmentResponse = await axios.get('http://www.dnd5eapi.co/api/alignments');
+      const alignmentResponse = await axios.get('https://www.dnd5eapi.co/api/alignments');
       const alignments: Alignment[] = alignmentResponse.data.results;
       // Pick a random alignment from the list
       const randomAlignment = getRandomItem(alignments);
