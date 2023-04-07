@@ -220,7 +220,7 @@ function App() {
                 </div>
                 <div className="flex justify-between items-center">
                   <p className="text-sm uppercase text-gray-400">Proficiencies</p>
-                  <span className="flex flex-col text-gray-400">From {randomClass.name}'s Proficiencies</span>
+                  <span className="flex flex-col text-gray-400 text-right">From {randomClass.name}'s Proficiencies</span>
                 </div>
                 <div className="flex flex-col items-end">
                   <p>Light and medium armor</p>
