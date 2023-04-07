@@ -213,7 +213,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a greataxe <em>or</em> <strong>(b)</strong> any martial melee weapon</p>
                   <p><strong>(a)</strong> two handaxes <em>or</em> <strong>(b)</strong> any simple weapon</p>
                   <p>An explorer's pack and four javelins</p>
@@ -235,7 +235,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a rapier, <strong>(b)</strong> a longsword, <em>or</em> <strong>(c)</strong> any simple weapon</p>
                   <p><strong>(a)</strong> a diplomat's pack <em>or</em> <strong>(b)</strong> an entertainer's pack</p>
                   <p><strong>(a)</strong> a lute <em>or </em> <strong>(b)</strong> any other musical instrument</p>
@@ -261,7 +261,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a mace <em>or</em> <strong>(b)</strong> a warhammer (if proficient)</p>
                   <p><strong>(a)</strong> scale mail, <strong>(b)</strong> leather armor, <em>or </em> <strong>(c)</strong> chain mail (if proficient)</p>
                   <p><strong>(a)</strong> a light crossbow and 20 bolts <em>or</em> <strong>(b)</strong> any simple weapon</p>
@@ -285,7 +285,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a wooden shield <em>or</em> <strong>(b)</strong> any simple weapon</p>
                   <p><strong>(a)</strong> a scimitar <em>or</em> <strong>(b)</strong> any simple melee weapon</p>
                   <p>Leather armor, an explorer&apos;s pack, and a druidic focus</p>
@@ -316,7 +316,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> chain mail <em>or</em> <strong>(b)</strong> leather armor, longbow, and 20 arrows</p>
                   <p><strong>(a)</strong> a martial weapon and a shield <em>or</em> <strong>(b)</strong> two martial weapons</p>
                   <p><strong>(a)</strong> a light crossbow and 20 bolts <em>or</em> <strong>(b)</strong> two handaxes</p>
@@ -340,7 +340,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a shortsword <em>or</em> <strong>(b)</strong> any simple weapon</p>
                   <p><strong>(a)</strong> a dungeoneer&apos;s  pack <em>or</em> <strong>(b)</strong> an explorer&apos;s pack</p>
                   <p>10 darts</p>
@@ -361,7 +361,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a martial weapon and a shield <em>or</em> <strong>(b)</strong> two martial weapons</p>
                   <p><strong>(a)</strong> five javelins <em>or</em> <strong>(b)</strong> any simple melee weapon</p>
                   <p><strong>(a)</strong> a priest&apos;s pack <em>or</em> <strong>(b)</strong> an explorer&apos;s pack</p>
@@ -384,7 +384,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> scale mail <em>or</em> <strong>(b)</strong> leather armor</p>
                   <p><strong>(a)</strong> two shortswords <em>or</em> <strong>(b)</strong> two simple melee weapons</p>
                   <p><strong>(a)</strong> a dungeoneer&spo;s pack <em>or</em> <strong>(b)</strong> an explorer&apos;s pack</p>
@@ -407,7 +407,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a rapier <em>or</em> <strong>(b)</strong> a shortsword</p>
                   <p><strong>(a)</strong> a shortbow and a quiver of 20 arrows <em>or</em> <strong>(b)</strong> a shortsword</p>
                   <p><strong>(a)</strong> a burglar&apos;s pack, <strong>(b)</strong> a dungeoneer&apos;s pack, <em>or</em> <strong>(c)</strong> an explorer&apos;s pack</p>
@@ -433,7 +433,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a light crossbow and 20 bolts <em>or</em> <strong>(b)</strong> any simple weapon</p>
                   <p><strong>(a)</strong> a component pouch <em>or</em> <strong>(b)</strong> an arcane focus</p>
                   <p><strong>(a)</strong> a dungeoneer&apos;s pack <em>or</em> <strong>(b)</strong> an explorer&apos;s pack</p>
@@ -458,7 +458,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a light crossbow and 20 bolts <em>or</em> <strong>(b)</strong> any simple weapon</p>
                   <p><strong>(a)</strong> a components pouch <em>or</em> <strong>(b)</strong> an arcane focus</p>
                   <p><strong>(a)</strong> a scholar&apos;s pack <em>or</em> <strong>(b)</strong> a dungeoneer&apos;s pack</p>
@@ -480,7 +480,7 @@ function App() {
                   <p className="text-sm uppercase text-gray-400">Starting Equipment</p>
                   <span className="flex flex-col text-gray-400">From {randomClass.name}'s Equipment Selection</span>
                 </div>
-                <div className="flex flex-col items-end">
+                <div className="flex flex-col items-end text-right">
                   <p><strong>(a)</strong> a quarterstaff <em>or</em> <strong>(b)</strong> a dagger</p>
                   <p><strong>(a)</strong> a component pouch <em>or</em> <strong>(b)</strong> an arcane focus</p>
                   <p><strong>(a)</strong> a scholar&apos;s pack <em>or</em> <strong>(b)</strong> an explorer&apos;s pack</p>
