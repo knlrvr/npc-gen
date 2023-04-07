@@ -146,6 +146,9 @@ function App() {
         'Craren Willowgrove',
         'Leofir Greenwish',
         'Kelfir Woodflight',
+        'Elaren Vinnan',
+        'Neridi Featherwatcher',
+        'Cairieth Valdiraean',
       ];
       const randomName = getRandomItem(names);
       if (randomName) {
@@ -165,7 +168,7 @@ function App() {
       <div className="max-w-2xl mx-auto flex flex-col justify-center h-screen">
         <div className="text-4xl mb-2 flex items-end px-2">
           <SiDungeonsanddragons 
-            className="text-6xl text-red-600" />
+            className="text-7xl text-red-600" />
           <h1 className="ml-2 uppercase text-2xl">Character Generator</h1>
         </div>
         {randomClass && randomRace && randomName && randomAlignment ? (
@@ -192,7 +195,7 @@ function App() {
             </div>
 
             {/* additional generated options */}
-            <p className="mt-4 mb-2 text-xs uppercase text-gray-300"> additional options</p>
+            <p className="mt-4 mb-2 text-xs uppercase text-gray-300"> additional information</p>
             <div className="space-y-2">
 
               {/* alignment */}
