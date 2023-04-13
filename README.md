@@ -6,6 +6,8 @@
 D&D character generator that fetches a random name from an array, random class & race from the D&D 5e API, 
 then displays the starting equipment and proficiencies of the class it fetched. This generator assumes Level 1. 
 
+I got so sick of trying to think of characters while dm'ing and now I don't have to. 
+
 ## View 
 [Live](https://character-generator-ten.vercel.app/)
 
