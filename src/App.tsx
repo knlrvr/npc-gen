@@ -4,6 +4,7 @@ import './index.css'
 
 import { SiDungeonsanddragons } from 'react-icons/si'
 import { FaDiceD20 } from 'react-icons/fa'
+import { AiOutlineSwapRight } from 'react-icons/ai'
 
 interface Class {
   name: string;
@@ -639,9 +640,13 @@ function App() {
         ) : (
           <h3 className="px-2">Loading...</h3>
         )}
-        <div className="mt-2 flex justify-end group px-2">
-          <button onClick={handleRefresh}>
-            <span className="flex items-center uppercase text-sm group-hover:text-gray-400">reroll character <FaDiceD20 className="ml-2 text-xl group-hover:text-red-600 group-hover:animate-spin"/></span>
+        <div className="mt-2 flex justify-between px-2">
+          <a href="https://dm-knlrvr.vercel.app/" target="_blank" className="text-sm flex items-center space-x-2 hover:text-gray-400">
+            <AiOutlineSwapRight />
+            <span>My DM Toolkit</span>
+          </a>
+          <button onClick={handleRefresh} className="group">
+            <span className="flex items-center uppercase text-sm hover:text-gray-400">reroll character <FaDiceD20 className="ml-2 text-xl group-hover:text-red-600 group-hover:animate-spin"/></span>
           </button>
         </div>
       </div>
